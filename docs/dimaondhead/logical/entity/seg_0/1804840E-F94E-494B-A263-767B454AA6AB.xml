@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1804840E-F94E-494B-A263-767B454AA6AB" name="Products">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:56:20 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="product_id" id="8EB69588-A7A4-B66C-BAAE-69EA7581BC5C">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:59:22 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_name" id="7849BAA0-0E6E-8810-C00D-129C07646E56">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:59:47 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_description" id="8303BD06-A3EE-3341-CDE7-FA928A44950A">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:00:17 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_quantity" id="85090D9E-20B2-DC6F-EFB1-091D6B40D694">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:00:37 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_price" id="FC16D99F-A9CA-F07B-D310-387F7E68C159">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:00:56 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_status" id="1E1198BD-6F29-A2AF-1596-16425CB819BE">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:13:12 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="employee_id" id="A9A26E30-D047-3EDC-7E3D-74905FD1B008">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:22:37 UTC</createdTime>
+<generatorID>D3D271C8-B37F-7E9D-CDED-3807CDB3BAE1</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<referedAttribute>FBEA0D32-57EF-D544-5217-6FC8A076C9CB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="965B3625-E57D-4290-F204-5C24B04C624B" name="Products PK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:59:35 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8EB69588-A7A4-B66C-BAAE-69EA7581BC5C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

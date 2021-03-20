@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1B0C1F0D-2F00-570A-7755-0CF56DC52D46" name="Purchase">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:56:30 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="purchase_id" id="8E91814C-DA1C-2311-2F99-3D345D3E38EC">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:03:31 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="number_received" id="BF512708-812B-09E1-EC26-11A5E770749F">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:03:37 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="purchase_date" id="0399D95A-A15D-78F9-5D1B-5811A0F73B54">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:04:21 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="employee_id" id="EFCFEA31-4BD4-303C-B1FC-5C3618A37AC9">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:22:09 UTC</createdTime>
+<generatorID>6D45F37F-EB4D-F507-C693-90C3A9505821</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<referedAttribute>FBEA0D32-57EF-D544-5217-6FC8A076C9CB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4234F4C2-D9CD-71A0-32F6-D1FF38DC6797" name="Purchase PK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:05:31 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8E91814C-DA1C-2311-2F99-3D345D3E38EC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

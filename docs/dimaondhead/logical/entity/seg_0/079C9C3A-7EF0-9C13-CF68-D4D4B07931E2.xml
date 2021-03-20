@@ -1,0 +1,167 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="079C9C3A-7EF0-9C13-CF68-D4D4B07931E2" name="Employee">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:49:35 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="employee_id" id="FBEA0D32-57EF-D544-5217-6FC8A076C9CB">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:49:43 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="first_name" id="D8ED120D-6C4B-A642-10B7-370719CC774F">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:49:56 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="last_name" id="34D8A0D3-ECA7-454D-B3E7-EA60EB82DF2D">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:50:17 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date_of_birth" id="C77A568C-799C-482D-ED90-9008FFDBE75F">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:50:32 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phone_number" id="73E51C82-3608-9AC6-BB8B-E003A7452882">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:50:56 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="7F09DABB-C979-E000-E165-D49534476308">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:51:26 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_type" id="5ECDF484-C50D-5E64-0A64-0EA71DA0DB19">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:53:11 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="7C4959AE-3E7A-AB68-A8ED-5B1EBDBFD3AB">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:58:28 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="AB148C09-5E77-8238-058B-46F98CF87314">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:58:49 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="hire_date" id="9A39A4AD-F79E-3497-A2BA-619D334DD870">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:07:43 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="727430E6-771C-AA67-151E-4D8DFA29A6EF" name="Employee PK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 17:49:55 UTC</createdTime>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3835CD7B-9CC4-B6C9-7534-A884B41356C1" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FBEA0D32-57EF-D544-5217-6FC8A076C9CB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

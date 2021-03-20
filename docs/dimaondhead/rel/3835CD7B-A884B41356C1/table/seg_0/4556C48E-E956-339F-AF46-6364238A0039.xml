@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4556C48E-E956-339F-AF46-6364238A0039" name="Employee">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>079C9C3A-7EF0-9C13-CF68-D4D4B07931E2</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="employee_id" id="893664A0-659D-336B-B4C5-DE4BBB074151">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>FBEA0D32-57EF-D544-5217-6FC8A076C9CB</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="12A5C9A0-FECC-04FD-9210-9B7DD7527070">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>D8ED120D-6C4B-A642-10B7-370719CC774F</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="0A88F429-3F5D-7C84-064E-C41C96771E34">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>34D8A0D3-ECA7-454D-B3E7-EA60EB82DF2D</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date_of_birth" id="08859534-E11B-8AE5-86FA-45C32ABD6ACB">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>C77A568C-799C-482D-ED90-9008FFDBE75F</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="27F6FC82-FD96-80EC-9462-B7014B55E9AF">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>73E51C82-3608-9AC6-BB8B-E003A7452882</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="B4335FD8-4139-1C2F-57DC-13770A3A4C30">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>7F09DABB-C979-E000-E165-D49534476308</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="user_type" id="87CF0307-D97B-C34D-3B89-FFCB79D78191">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>5ECDF484-C50D-5E64-0A64-0EA71DA0DB19</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="username" id="2F9F9AA3-EC7E-D7CD-5DB1-DFADF8D79212">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>7C4959AE-3E7A-AB68-A8ED-5B1EBDBFD3AB</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="CA5946AD-61BD-1EEA-B3CC-43061255B999">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>AB148C09-5E77-8238-058B-46F98CF87314</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hire_date" id="7FCA158B-A67A-6F25-24D6-DD1DE797EA2A">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>9A39A4AD-F79E-3497-A2BA-619D334DD870</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6651FFE7-59CE-BA06-58AC-CDD439130188" name="Employee_PK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>727430E6-771C-AA67-151E-4D8DFA29A6EF</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="893664A0-659D-336B-B4C5-DE4BBB074151"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

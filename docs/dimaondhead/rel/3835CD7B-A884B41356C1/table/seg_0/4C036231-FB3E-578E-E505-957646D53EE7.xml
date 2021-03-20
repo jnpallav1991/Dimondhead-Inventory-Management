@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4C036231-FB3E-578E-E505-957646D53EE7" name="Purchase">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>1B0C1F0D-2F00-570A-7755-0CF56DC52D46</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="purchase_id" id="A49CA02F-5D96-07E6-4A06-22AE8D62F9CF">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>8E91814C-DA1C-2311-2F99-3D345D3E38EC</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="number_received" id="06C42521-BB8A-0847-9BD2-30C996175EE9">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>BF512708-812B-09E1-EC26-11A5E770749F</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="purchase_date" id="812671BC-44B2-E2EA-9D45-B83BF5E6CF11">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>0399D95A-A15D-78F9-5D1B-5811A0F73B54</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_employee_id" id="13328073-B387-4AEE-89B0-B617577E6F09">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:22:43 UTC</createdTime>
+<generatorID>EFCFEA31-4BD4-303C-B1FC-5C3618A37AC9</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5E1236D0-661E-F284-1809-0C278CC1F803" referredColumn="893664A0-659D-336B-B4C5-DE4BBB074151"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="714298A2-E662-2449-C5F5-D91BDE267ABC" name="Purchase_PK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>4234F4C2-D9CD-71A0-32F6-D1FF38DC6797</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A49CA02F-5D96-07E6-4A06-22AE8D62F9CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C3279A73-737A-A145-4174-204F713F7D58" name="Purchase_Employee_FK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:22:43 UTC</createdTime>
+<generatorID>6D45F37F-EB4D-F507-C693-90C3A9505821</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13328073-B387-4AEE-89B0-B617577E6F09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

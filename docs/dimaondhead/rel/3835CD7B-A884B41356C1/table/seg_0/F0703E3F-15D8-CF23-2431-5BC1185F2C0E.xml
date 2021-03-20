@@ -1,0 +1,175 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F0703E3F-15D8-CF23-2431-5BC1185F2C0E" name="Orders">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>EF67145D-34E1-5875-6702-F55273096556</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="order_id" id="88835E41-603F-DE8A-F61D-8B285B5E4BC5">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>1F199308-4A2E-34A7-D0C3-6BE8E2B8790F</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="2E4381BC-30A3-AF20-BBFD-8E893B662436">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>56392D69-2F9F-4EE3-DB3C-9BB7A5166836</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="6E6A6637-4C75-F32B-C0D1-87E14D0CDF71">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>AF7DC132-FF0C-F2DA-B687-2D50D8967F3E</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 CHAR</dataTypeSize>
+<ownDataTypeParameters>26 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="quantity" id="9F4433DB-7299-14F4-50A8-500342A7FCB8">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>FC71809A-0AA1-8F88-7DD3-1B90D992F79F</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order_date" id="B3422269-7CA0-AA6E-0AD7-56E32D6F7CB4">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>152D7A5C-5A43-6522-A0C2-64DECC78905A</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="payment_type" id="B7D668DD-2E12-E48A-3B3E-C92B2024F7AE">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>2821EE86-245B-F0FF-9290-A6A1431FA591</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="unit_price" id="95F6D018-009F-C460-D10C-51625F4DE351">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>0B07FE99-8581-1245-5221-1866BBE6F97B</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total" id="5806CE0D-BED8-1920-8EB8-D612D3046B6C">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>A15A88FE-F296-C752-4224-74E03294A5DD</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Products_product_id" id="B9874BED-28A2-99BE-87E7-5BFC49DD8B0E">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:52 UTC</createdTime>
+<generatorID>9DEC9F6E-AF87-BC84-E2C6-2C970FF00CA3</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05F554D9-E986-6D2E-8FAF-94291DAD8E59" referredColumn="DAA847D2-9578-4450-9567-2E1FDA5FF803"/>
+</associations>
+</Column>
+<Column name="Employee_employee_id" id="2160F0AC-3F8B-0D59-0839-CB068D7F945A">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:22:43 UTC</createdTime>
+<generatorID>A7B1D546-1CF4-8D1E-5B50-515755D35081</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="22E28A4D-9121-2A53-6F99-0F60810D64C9" referredColumn="893664A0-659D-336B-B4C5-DE4BBB074151"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7DFC1AFE-ACFC-CAD6-2024-3676F8D2E230" name="Orders_PK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:15 UTC</createdTime>
+<generatorID>71A879F6-39BA-76F7-CA79-CCB8E493F468</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88835E41-603F-DE8A-F61D-8B285B5E4BC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E388397B-6D58-130C-1B32-14A362BE2E8E" name="Orders_Products_FK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:20:52 UTC</createdTime>
+<generatorID>7A406DBF-697D-F7F3-8F87-C75BA5F36F79</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9874BED-28A2-99BE-87E7-5BFC49DD8B0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9AD9E43B-7232-0C13-5B63-9AEF99CD3FCF" name="Orders_Employee_FK">
+<createdBy>pallavjain</createdBy>
+<createdTime>2021-03-07 18:22:43 UTC</createdTime>
+<generatorID>A374F7BE-CE75-1FC1-E355-F0531D7E3E07</generatorID>
+<ownerDesignName>dimaondhead</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2160F0AC-3F8B-0D59-0839-CB068D7F945A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
