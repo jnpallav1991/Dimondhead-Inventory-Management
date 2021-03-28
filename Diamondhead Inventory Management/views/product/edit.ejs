@@ -1,0 +1,12 @@
+<div class="row3 inspace-30 clear" id ="comments">
+  <form class="content"  action="<%=`/product/${product._id}/update?_method=PUT`%>" method="POST">
+    <h2 class="content">Edit product</h2>
+    <label for="inputTitle">Product Name</label>
+    <input type="text" name="pName" id="inputName" value="<%= product.pName %>" placeholder="Product Name" autofocus required>
+    <label for="inputTitle">Product Brand</label>
+    <input type="text" name="pBrand" id="inputBrand" value="<%= product.pBrand %>"  placeholder="Product brand name" required>
+    <label for="inputDescription">Description</label>
+    <textarea type="text" name="pDescription" id="inputDescription" placeholder="Description" cols="25" rows="5"><%= product.pDescription %></textarea>
+    <br /><button class="btn" type="submit">Update</button>
+  </form>
+</div>

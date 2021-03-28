@@ -1,0 +1,31 @@
+<h2 class="content">Product Purchase</h2>
+<div class="content">
+  <a class="btn" href="/purchase/new">Purchase</a>
+  <h1></h1>
+</div>
+<table class="scrollable">
+  <thead>
+    <tr>
+	  <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% purchases.forEach(purchase => { %>
+    <tr>
+      <td>
+        <a href="<%= `/purchase/${purchase._id}` %>">
+          <%=  purchase._id %>
+        </a>
+	  </td>
+      <td>
+        <%= purchase.totalQuantity %>
+      </td>
+      <td>
+        <%= `$${purchase.productPrice}` %>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

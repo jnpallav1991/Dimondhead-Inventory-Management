@@ -21,6 +21,18 @@ File: Layout CSS
 .row4, .row4 a{}
 .row5, .row5 a{}
 
+/*------Flashes-----------------*/
+.flash {
+	background: rgba(103, 120, 209, 0.7);
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	padding: 10px 30px;
+	position: absolute;
+	top: 110px;
+	z-index: 2;
+  }
+
 
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
@@ -360,6 +372,16 @@ th{color:#FFFFFF; background-color:#373737;}
 tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
 table a, #comments a{background-color:inherit;}
+
+.data-form {
+	min-width: 300px;
+	max-width: 600px;
+	margin: 0 auto;
+  }
+  
+  .data-form label {
+	margin: 5px 0 0 0;
+  }
 
 
 /* ------------------------------------------------------------------------------------------------------------ */
