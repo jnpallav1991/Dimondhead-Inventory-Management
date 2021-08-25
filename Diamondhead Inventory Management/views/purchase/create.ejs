@@ -1,0 +1,70 @@
+<div>
+	<form class="container-fluid p-3" action="<%=`/purchase/create`%>" method="POST">
+		<h2>Insert product purchase</h2>
+		<input type="hidden" id="productId" name="productId">
+		<div class="form-group">
+			<label for="inputTitle">Product Name</label>
+			<input class="form-control" type="text" name="pName" id="inputName" placeholder="Product Name" autofocus required>
+		</div>
+		<div class="form-group">
+
+			<label for="inputQuantity">Quantity</label>
+			<input class="form-control" type="number" name="pQuantity" id="inputquantity" placeholder="Quanity" min="1" pattern="[0-9]"
+				required>
+		</div>
+		<div class="form-group">
+			<label for="inputPrice">Price(Per Peice)</label>
+			<input class="form-control" type="number" name="pPrice" id="inputPrice" placeholder="Price" min="0" required>
+		</div>
+		<div class="form-group">
+
+			<label for="inputDob">Purchase Date</label>
+			<input class="form-control" type="text" name="purchaseDate" id="inputPurchaseDate" placeholder="MM/DD/YYYY" class="readonly"
+				required>
+		</div>
+		<button id="btnSubmit" class="btn btn-primary" type="submit">Save</button>
+	</form>
+
+	<script>
+		let isFlag = true
+		$(document).ready(function () {
+			$("#inputName").autocomplete({
+				source: async function (request, response) {
+					let data = await fetch(`https://whispering-headland-85349.herokuapp.com/order/search?query=${request.term}`)
+						.then(results => results.json())
+						.then(results =>
+							results.map(result => {
+								return { label: result.pName, value: result.pName, id: result._id };
+							}));
+
+					isFlag = false
+					response(data);
+				},
+				minLength: 2,
+				select: function (event, ui) {
+					isFlag = true
+					$("#productId").val(ui.item.id);
+
+				}
+			});
+
+		});
+
+		$("#target").submit(function (event) {
+			if (!isFlag) {
+				alert("Select Product name from autopopulate list.");
+				event.preventDefault();
+			}
+
+
+		});
+
+		$(function () {
+			$("#inputPurchaseDate").datepicker();
+		});
+
+		$(".readonly").keydown(function (e) {
+			e.preventDefault();
+		});
+	</script>
+</div>

@@ -30,7 +30,11 @@ var employeeSchema = new Schema(
 	},
     phoneNumber: {
       type: String
-    },
+	},
+	isAdmin:{
+		type:Boolean,
+		default:false
+	},
 
     hireDate: {
         type: Date
@@ -49,33 +53,19 @@ var employeeSchema = new Schema(
   }
 );
 
+employeeSchema.pre("save", function (next) {
+	if(this.userType==="Admin"){
+		this.isAdmin = true;
+	}
+	else{
+		this.isAdmin = false;
+	}
+	next();
+});
+
 employeeSchema.virtual("fullName").get(function() {
   return `${this.name.first} ${this.name.last}`;
 });
-
-
-// pre save hook. creating a hook, operation that will occur before something else 
-// going to occur before the save operation. 
-//checking to see if there is a subscriber account with the same email. if so associate it. 
-// employeeSchema.pre("save", function(next) {
-//   let employee = this;
-//   if (employee.subscribedAccount === undefined) {
-//     Subscriber.findOne({
-//       email: employee.email
-//     })
-//       .then(subscriber => {
-//         employee.subscribedAccount = subscriber;
-//         next();
-//       })
-//       .catch(error => {
-//         console.log(`Error in connecting subscriber: ${error.message}`);
-//         next(error);
-//       });
-//   } else {
-//     next();
-//   }
-// });
-
 
 // plugging in package, passing in a configuration object. 
 employeeSchema.plugin(passportLocalMongoose, {

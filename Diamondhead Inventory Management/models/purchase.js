@@ -27,9 +27,13 @@ var purchaseSchema = new Schema(
 			default: Date.now
 		},
 		employeeId: {
-			type: Number,
-			required: true
-		}
+			type: Schema.Types.ObjectId,
+			ref: "Employee"
+		},
+		productId: {
+			type: Schema.Types.ObjectId,
+			ref: "Product"
+		  }
 	},
 	{
 		timestamps: true
@@ -49,8 +53,6 @@ purchaseSchema.virtual("productStatus").get(function () {
 purchaseSchema.pre("save", function (next) {
 	this.totalPrice = this.quantity * this.productPerPrice;
 	next();
-
-
 });
 
 module.exports = mongoose.model("Purchase", purchaseSchema);

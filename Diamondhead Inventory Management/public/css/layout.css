@@ -33,6 +33,9 @@ File: Layout CSS
 	z-index: 2;
   }
 
+  .ui-spinner{
+	width: 100%;
+  }
 
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
@@ -59,7 +62,6 @@ File: Layout CSS
 #pageintro article p:first-of-type{margin:0 0 30px 0; padding:0; font-size:2.5rem;}
 #pageintro .heading{font-size:5rem;}
 #pageintro footer{margin-top:50px;}
-#pageintro footer .btn{padding:25px 35px 27px; font-size:1.2rem; border-radius:50px;}
 
 
 /* Content Area
@@ -86,21 +88,6 @@ File: Layout CSS
 #services article .heading{font-size:1.2rem; font-weight:700;}
 #services article p{margin:0; line-height:normal;}
 
-/* Comments */
-#comments ul{margin:0 0 40px 0; padding:0; list-style:none;}
-#comments li{margin:0 0 10px 0; padding:15px;}
-#comments .avatar{float:right; margin:0 0 10px 10px; padding:3px; border:1px solid;}
-#comments address{font-weight:bold;}
-#comments time{font-size:smaller;}
-#comments .comcont{display:block; margin:0; padding:0;}
-#comments .comcont p{margin:10px 5px 10px 0; padding:0;}
-
-#comments form{display:block; width:100%;}
-#comments input, #comments textarea{width:100%; padding:10px; border:1px solid;}
-#comments textarea{overflow:auto;}
-#comments div{margin-bottom:15px;}
-#comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
-
 /* Sidebar */
 .container .sidebar{}
 
@@ -116,13 +103,10 @@ File: Layout CSS
 #footer .logoname{margin-bottom:50px;}
 #footer p + .faico{margin-top:30px;}
 
-#footer input, #footer button{border:1px solid;}
-#footer input{display:block; width:100%; padding:12px 15px;}
 #footer button{padding:10px 15px 12px; font-size:1rem;}
 
 #footer .linklist li{display:block; margin-bottom:15px; padding:0 0 15px 0; border-bottom:1px solid;}
 #footer .linklist li:last-child{margin:0; padding:0; border:none;}
-#footer .linklist li::before, #footer .linklist li::after{display:table; content:"";}
 #footer .linklist li, #footer .linklist li::after{clear:both;}
 
 #footer .latestimg{}
@@ -156,8 +140,6 @@ File: Layout CSS
 Settings are all different due to the optical similarity needed for different sized elements
 Delete this section if roundness is not wanted / required
 --------------------------------------------------------------------------------------------------------------- */
-.btn{border-radius:14px;}
-#footer input, #footer button{border-radius:12px;}
 
 
 /* Transition Fade
@@ -239,13 +221,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #backtotop:hover{opacity:1;}
 
 
-/* Tables
---------------------------------------------------------------------------------------------------------------- */
-table, th, td{border:1px solid; border-collapse:collapse; vertical-align:top;}
-table, th{table-layout:auto;}
-table{width:100%; margin-bottom:15px;}
-th, td{padding:5px 8px;}
-td{border-width:0 1px;}
+
 
 
 /* Gallery
@@ -287,15 +263,12 @@ a{color:#3A93F3;}
 a:active, a:focus{background:transparent !important;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
-input:focus, textarea:focus, *:required:focus{border-color:#3A93F3 !important;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.55);}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(255,255,255,.7);}
 
-.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#3A93F3; border-color:#3A93F3;}
-.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
 
 .imgover:hover::before{background-color:rgba(58,147,243,.3);/* #3A93F3 */}
 .imgover, .imgover:hover::after{color:#FFFFFF;}
@@ -334,10 +307,6 @@ input:focus, textarea:focus, *:required:focus{border-color:#3A93F3 !important;}
 /* Footer */
 #footer .heading{color:#FFFFFF;}
 #footer hr, #footer .borderedbox, #footer .linklist li{border-color:rgba(255,255,255,.1);}
-
-#footer input, #footer button{border-color:transparent;}
-#footer input{color:#FFFFFF; background-color:rgba(255,255,255,.2);}
-#footer input:focus{background-color:#3A93F3;}
 #footer button{color:#FFFFFF; background-color:#3A93F3;}
 #footer button:hover{color:inherit; background-color:transparent; border-color:inherit;}
 
@@ -365,13 +334,6 @@ input:focus, textarea:focus, *:required:focus{border-color:#3A93F3 !important;}
 
 #backtotop{color:#FFFFFF; background-color:#3A93F3;}
 
-
-/* Tables + Comments */
-table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
-th{color:#FFFFFF; background-color:#373737;}
-tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
-tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
-table a, #comments a{background-color:inherit;}
 
 .data-form {
 	min-width: 300px;
@@ -423,8 +385,6 @@ table a, #comments a{background-color:inherit;}
 
 	#breadcrumb{}
 
-	.container{}
-	#comments input[type="reset"]{margin-top:10px;}
 	.pagination li{display:inline-block; margin:0 5px 5px 0;}
 
 	#footer{}
@@ -472,7 +432,7 @@ table a, #comments a{background-color:inherit;}
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width:650px){
 	.scrollable{display:block; width:100%; margin:0 0 30px 0; padding:0 0 15px 0; overflow:auto; overflow-x:scroll;}
-	.scrollable table{margin:0; padding:0; white-space:nowrap;}
+	.scrollable{margin:0; padding:0; white-space:nowrap;}
 
 	.inline li{display:block; margin-bottom:10px;}
 	.pushright li{margin-right:0;}

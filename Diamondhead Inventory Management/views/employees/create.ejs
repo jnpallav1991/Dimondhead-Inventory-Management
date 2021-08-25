@@ -1,0 +1,62 @@
+<div>
+	<form class="container-fluid p-3" action="<%=`/employees/create`%>" method="POST">
+		<h2>Create Employee</h2>
+		<div class="form-group">
+			<label for="inputTitle">First Name</label>
+			<input class="form-control" type="text" name="fname" id="inputFName" placeholder="First Name" autofocus
+				required>
+		</div>
+		<div class="form-group">
+			<label for="inputTitle">Last Name</label>
+			<input class="form-control" type="text" name="lname" id="inputLName" placeholder="Last Name" required>
+		</div>
+		<div class="form-group">
+			<label for="inputDob">Date of birth</label>
+			<input class="form-control" type="text" name="dob" id="inputDob" placeholder="MM/DD/YYYY" class="readonly"
+				required>
+		</div>
+		<div class="form-group">
+			<label for="inputPNumber">Phone Number</label>
+			<input class="form-control" type="text" name="pnumber" id="inputPNumber" placeholder="XXX-XXX-XXXX"
+				required>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail">Email</label>
+			<input class="form-control" type="email" name="email" id="inputEmail" placeholder="Email" required>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword">Password</label>
+			<input class="form-control" type="password" name="password" id="inputPassword" placeholder="Password"
+				required>
+		</div>
+		<div class="form-group">
+			<label for="inputUserType">User Type</label>
+			<select class="form-control" name="userType" id="salutation" required>
+				<option disabled selected>Please pick one</option>
+				<option>Admin</option>
+				<option>Employee</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="inputHireDate">HireDate</label>
+			<input class="form-control" type="text" name="hireDate" id="inputHireDate" placeholder="MM/DD/YYYY"
+				class="readonly" required>
+		</div>
+		<button class="btn btn-primary" type="submit">Save</button>
+	</form>
+
+	<script>
+		$(function () {
+			$("#inputHireDate").datepicker();
+		});
+		$(function () {
+			$("#inputDob").datepicker({ yearRange: "-50:+0", changeYear: true });
+
+			$("#userType").selectmenu();
+		});
+
+		$(".readonly").keydown(function (e) {
+			e.preventDefault();
+		});
+	</script>
+</div>

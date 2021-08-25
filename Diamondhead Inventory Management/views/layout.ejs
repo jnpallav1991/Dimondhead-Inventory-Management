@@ -7,105 +7,128 @@ Copyright: OS-Templates.com
 Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
-<html lang="">
+<html lang="en">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+
 <head>
-<title>Diamondhead</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="/css/layout.css" rel="stylesheet" type="text/css" media="all">
+	<title>Diamondhead</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="/css/layout.css" rel="stylesheet" type="text/css" media="all">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<!-- JAVASCRIPTS -->
 
-
-<!-- JAVASCRIPTS -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/jquery.backtotop.js"></script>
-<script src="/js/jquery.mobilemenu.js"></script>
-<script>setTimeout(function() {
-	$('.flashes').fadeOut('fast');
-}, 4000); // <-- time in milliseconds</script>
+	<script>setTimeout(function () {
+			$('.flashes').fadeOut('fast');
+		}, 4000); // <-- time in milliseconds</script>
 </head>
+
 <body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper overlay row0">
-  <div id="topbar" class="hoc clear">
-    <div class="fl_left"> 
-      <!-- ################################################################################################ -->
-      <ul class="nospace">
-        <li><i class="fas fa-phone"></i>
-        </i> +00 (123) 456 7890</li>
-      </ul>
-      <!-- ################################################################################################ -->
-    </div>
-    <div class="fl_right"> 
-      <!-- ################################################################################################ -->
-      <ul class="nospace">
-        <li><a href="/" title="Home"><i class="fas fa-home"></i></a></li>
-        <li><a href="/employees/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-      </ul>
-      <!-- ################################################################################################ -->
-    </div>
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Top Background Image Wrapper -->
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<div class="wrapper overlay row0">
+		<div id="topbar" class="hoc clear">
+			<div class="fl_left">
+				<!-- ################################################################################################ -->
+				<ul class="nospace">
+					<li><i class="fas fa-phone"></i>
+						</i> +00 (123) 456 7890</li>
+				</ul>
+				<!-- ################################################################################################ -->
+			</div>
+			<div class="fl_right">
+				<!-- ################################################################################################ -->
+				<ul class="nospace">
 
-  <!-- ################################################################################################ -->
-  <div class="wrapper row2">
-    <header id="header" class="hoc clear">
-      <div id="logo" class="fl_left"> 
-        <!-- ################################################################################################ -->
-        <h1 class="logoname"><a href="/">Diamondhead</span></a></h1>
-        <!-- ################################################################################################ -->
-      </div>
-      <nav id="mainav" class="fl_right"> 
-        <!-- ################################################################################################ -->
-        <ul class="clear">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/employees">Employees</a></li>
-          <li><a href="/product">Product</a></li>
-          <li><a href="/purchase">Purchase</a></li>
-          <li><a href="/orders">Orders</a></li>
-          <li><a href="/aboutus">About Us</a></li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </nav>
-    </header>
-  </div>
-  
-<!-- End Top Background Image Wrapper -->
-<div class="flashes">
-	<% if (flashMessages) { %>
-	<% if (flashMessages.success) { %>
-	<div class="flash success">
-		<%= flashMessages.success %>
+					<% if (loggedIn) { %>
+						
+					<i>	Welcome <%= currentUser.name.first %></i>
+					<li><a href="/" title="Home"><i class="fas fa-home"></i></a></li>
+					<li><a href="/employees/logout" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+		
+					<%} else {%>
+						<li><a href="/" title="Home"><i class="fas fa-home"></i></a></li>
+						<li><a href="/employees/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+					<% } %>
+					
+				</ul>
+				<!-- ################################################################################################ -->
+			
+			</div>
+		</div>
 	</div>
-	<% } else if (flashMessages.error) { %>
-	<div class="flash error">
-		<%= flashMessages.error %>
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<!-- Top Background Image Wrapper -->
+
+	<!-- ################################################################################################ -->
+	<div class="wrapper row2">
+		<header id="header" class="hoc clear">
+			<div id="logo" class="fl_left">
+				<!-- ################################################################################################ -->
+				<h1 class="logoname"><a href="/">Diamondhead</span></a></h1>
+				<!-- ################################################################################################ -->
+			</div>
+			<nav id="mainav" class="fl_right">
+				<!-- ################################################################################################ -->
+				<ul class="clear">
+					<li class="active"><a href="/">Home</a></li>
+					<% if(currentUser && currentUser.isAdmin){ %>
+					<li ><a href="/employees">Employees</a></li>
+					<%}%>
+					<%if (loggedIn){%>
+					<li ><a href="/product">Product</a></li>
+					<li ><a href="/purchase">Purchase</a></li>
+					<li ><a href="/order">Orders</a></li>
+					<%}%>
+					<li ><a href="/airQuality">Air Quality</a></li>
+					<li ><a href="/aboutus">About Us</a></li>
+				</ul>
+				<!-- ################################################################################################ -->
+			</nav>
+		</header>
 	</div>
-	<% } %>
-	<% } %>
-</div>
 
-<div class="row3 inspace-30 clear" id="page-container">
-    <%- body %>
-</div>
+	<!-- End Top Background Image Wrapper -->
+	<div class="flashes">
+		<% if (flashMessages) { %>
+			<% if (flashMessages.success) { %>
+				<div class="flash success">
+					<%= flashMessages.success %>
+				</div>
+				<% } else if (flashMessages.error) { %>
+					<div class="flash error">
+						<%= flashMessages.error %>
+					</div>
+					<% } %>
+						<% } %>
+	</div>
 
-<div class="wrapper row5">
-  
-  <div id="copyright" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Created by <a target="_blank" title="Free Website Templates">The Gang</a></p>
-    <!-- ################################################################################################ -->
-  </div>
-  
-</div>
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+	<div class="row3 inspace-30 clear" id="page-container">
+		<%- body %>
+	</div>
+
+	<div class="wrapper row5">
+
+		<div id="copyright" class="hoc clear">
+			<!-- ################################################################################################ -->
+			<p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="#">Domain Name</a></p>
+			<p class="fl_right">Created by <a target="_blank" title="Free Website Templates">The Gang</a></p>
+			<!-- ################################################################################################ -->
+		</div>
+
+	</div>
+	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 
 </body>
+
 </html>

@@ -1,0 +1,41 @@
+<h2 >Order History</h2>
+<div >
+	<a class="btn btn-outline-primary" href="/order/create">New Order</a>
+	<h1></h1>
+</div>
+<table class="table table-bordered">
+	<thead class="thread-dark">
+		<tr>
+			<th>Order Id</th>
+			<th>Order Date</th>
+			<th>Order Person Name</th>
+			<th>Order Products</th>
+			<th>Order Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% orders.forEach(order=> { %>
+			<tr>
+				<td>
+					<a href="<%= `/order/${order._id}` %>">
+						<%= order._id%>
+					  </a>
+				</td>
+				<td>
+					<%= formatedPostedDate(order.orderDate,"mmm d, yyyy") %>
+				</td>
+				<td>
+
+					<%= order.orderPersonName %>
+
+				</td>
+				<td>
+					<%= order.products.length %>
+				</td>
+				<td>
+					<%= `$${order.totalPrice.toFixed(2)}` %>
+				</td>
+			</tr>
+			<% }); %>
+	</tbody>
+</table>

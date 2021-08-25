@@ -1,0 +1,18 @@
+<div>
+	<form class="container-fluid p-3" action="<%=`/product/create`%>" method="POST">
+		<h2>Insert a new product</h2>
+		<div class="form-group">
+			<label for="inputTitle">Product Name</label>
+			<input class="form-control" type="text" name="pName" id="inputName" placeholder="Product Name" autofocus required>
+		</div>
+		<div class="form-group">
+			<label for="inputTitle">Product Brand</label>
+			<input class="form-control" type="text" name="pBrand" id="inputBrand" placeholder="Product brand name" required>
+		</div>
+		<div class="form-group">
+			<label for="inputDescription">Description</label>
+			<textarea class="form-control" type="text" name="pDescription" id="inputDescription" cols="25" rows="5" required></textarea>
+		</div>
+		<button class="btn btn-primary" type="submit">Save</button>
+	</form>
+</div>

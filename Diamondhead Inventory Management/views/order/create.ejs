@@ -1,0 +1,268 @@
+
+<% 
+// Utility function for formatting prices as currency
+const formatCurrency = (value) => {
+return value.toLocaleString("en", {minimumFractionDigits: 2, maximumFractionDigits:2})
+
+} %> 
+
+<div>
+	<h2>Order</h2>
+	<form class="container-fluid p-1" action="/order/create" method="POST" autocomplete="off">
+		<table class="table table-bordered" id="myTable">
+			<thead class="thread-dark">
+				<tr>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Total</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody id="order-container">
+				<tr id="Product1">
+					<input type="hidden" id="productId1" name="product[1][_id]">
+					<td>
+						<input class="form-control" type="text" id="recipe1" autocomplete="off" name="product[1][product_name]"
+							placeholder="Product Name" autofocus required>
+					</td>
+
+					<td>
+						<input class="form-control" type="number" id="spinner" name="product[1][product_quantity]" class="readonly" disabled required>
+					</td>
+					<td> 
+						<input class="form-control" type="text" id="price" name="product[1][product_price]" placeholder="Price" class="readonly" required> 
+					</td>
+					<td id="totalPrice"></td>
+					<td>
+						<a onclick="myFunction(1)" id="delete-product"><i class="far fa-trash-alt"></i></a>
+					</td>
+
+				<tr>
+
+			</tbody>
+		</table>
+
+		<a href="javascript:;" id="add-new-order">Add Product</a>
+	
+	
+		<p style="margin-top: 25px;"></p>
+		<h3 class="panel-title">
+			Customer Details
+		</h3>
+		<div class="form-group">
+		<label for="inputTitle">Person Name</label>
+		<input class="form-control" type="text" name="OPersonName" id="inputName" placeholder="Name" required>
+		</div>
+		<div class="form-group">
+		<label for="inputPNumber" style="margin-top: 15px;">Phone Number</label>
+		<input class="form-control" name="pnumber" id="OPersonNumber" placeholder="XXX-XXX-XXXX" required>
+	</div>
+	<div class="form-group">
+		<label for="inputOrderDate" style="margin-top: 15px;">Order Date</label>
+		<input class="form-control" type="text" name="orderDate" id="inputOrderDate" placeholder="MM/DD/YYYY" class="readonly" required>
+	</div>
+		
+			<button class="btn btn-primary" type="submit">Make Order</button>
+		
+	</form>
+
+	<script>
+		let productsName = {};
+		$(document).ready(function () {
+			$("#recipe1").autocomplete({
+				source: async function (request, response) {
+					let data = await fetch(`https://whispering-headland-85349.herokuapp.com/order/search?query=${request.term}`)
+						.then(results => results.json())
+						.then(results =>
+							results.map(result => {
+								return { label: result.pName, value: result.pName, id: result._id };
+							}));
+
+					$("#spinner").spinner("disable")
+					$("#spinner").spinner("value", 0);
+					$("#totalPrice").html("");
+					$("#price").val("");
+					delete productsName[1];
+					response(data);
+
+				},
+				minLength: 2,
+				select: function (event, ui) {
+					fetch(`https://whispering-headland-85349.herokuapp.com/order/get/${ui.item.id}`)
+						.then(result => result.json())
+						.then(result => {
+							console.log(result);
+							let duplicate = false
+							for (var key in productsName) {
+								var value = productsName[key];
+								if (value === result._id) {
+									duplicate = true;
+								}
+							}
+							if (!duplicate) {
+								productsName[1] = result._id
+								console.log("Product Added:", productsName)
+								$("#spinner").empty();
+								if ($("#spinner").spinner("option", "disabled")) {
+									$("#spinner").spinner("enable");
+								}
+								$("#spinner").spinner({ max: result.productAvailable});
+								$("#spinner").spinner("value", 1);
+								$("#spinner").on("spinstop", function () {
+									let value = $(this).spinner('value');
+									let productPrice = result.productAveragePrice;
+									let totalPrice = value * productPrice;
+									$("#totalPrice").html("$" + totalPrice.toFixed(2));
+								});
+								$("#totalPrice").empty();
+								$("#price").val("$" + result.productAveragePrice.toFixed(2));
+								$("#totalPrice").html("$" + result.productAveragePrice.toFixed(2));
+								$("#productId1").val(result._id);
+								//console.log(result)
+							}
+							else {
+								alert("Duplicate product name added.");
+							}
+						});
+				}
+			});
+		});
+
+		$(function () {
+			var spinner = $("#spinner").spinner({
+				min: 1,
+				numberFormat: "n"
+			});
+			spinner.spinner("disable");
+		});
+
+		$(function () {
+
+			$("#inputOrderDate").datepicker();
+		});
+
+		let i = 2;
+		document.getElementById('add-new-order').onclick = function () {
+			console.log(i);
+			let template = `
+			<input type="hidden" id="productId${i}" name="product[${i}][_id]">
+        	<td>
+            	<input class="form-control" id="recipe${i}" name="product[${i}][product_name]" placeholder="Product Name" autofocus required>
+        	</td>
+			<td>
+				<input class="form-control" id="spinner${i}" name="product[${i}][product_quantity]" class="readonly" disabled required>
+			</td>
+			<td> 
+				<input class="form-control" type="text" id="price${i}" name="product[${i}][product_price]" placeholder="Price" class="readonly" required> 
+			</td>
+			<td id="totalPrice${i}"></td>
+			
+			<td>
+				<a onclick="myFunction(${i})" id="delete-order"><i class="far fa-trash-alt"></i></a>
+			</td>
+			`;
+
+			// <td>
+            // 	<input id="totalPrice${i}" name="product[${i}][product_total_price]" placeholder="Total Price" readonly required>
+			// </td>
+
+			let container = document.getElementById('order-container');
+			let div = document.createElement('tr');
+			div.setAttribute("id", "Product" + i);
+			div.innerHTML = template;
+			container.appendChild(div);
+			let quantitySpinner = $("#spinner" + i);
+			let totalPriceInput = $("#totalPrice" + i);
+			let price = $("#price" + i);
+			let productId = $("#productId"+i);
+			let position = i;
+			$("#recipe" + i).autocomplete({
+				source: async function (request, response) {
+					let data = await fetch(`https://whispering-headland-85349.herokuapp.com/order/search?query=${request.term}`)
+						.then(results =>
+							results.json()
+						)
+						.then(results =>
+
+							results.map(result => {
+
+								return { label: result.pName, value: result.pName, id: result._id };
+							})
+						);
+
+					quantitySpinner.spinner("disable");
+					quantitySpinner.spinner("value", 0);
+					totalPriceInput.html("");
+					price.val("");
+					delete productsName[position];
+					response(data);
+
+				},
+				minLength: 2,
+				select: function (event, ui) {
+					fetch(`https://whispering-headland-85349.herokuapp.com/order/get/${ui.item.id}`)
+						.then(result => result.json())
+						.then(result => {
+							let duplicate = false
+							for (var key in productsName) {
+								var value = productsName[key];
+								if (value === result._id) {
+									duplicate = true;
+								}
+							}
+							if (!duplicate) {
+								productsName[position] = (result._id);
+								console.log("Product Added:", productsName)
+								quantitySpinner.empty();
+								if (quantitySpinner.spinner("option", "disabled")) {
+									quantitySpinner.spinner("enable");
+								}
+								quantitySpinner.spinner({ max: result.productAvailable });
+								quantitySpinner.spinner("value", 1);
+								quantitySpinner.on("spinstop", function () {
+									let value = $(this).spinner('value');
+									let productPrice = result.productAveragePrice;
+									let totalPrice = value * productPrice;
+									totalPriceInput.html("$" + totalPrice.toFixed(2));
+								});
+								totalPriceInput.empty();
+								totalPriceInput.html("$" + result.productAveragePrice.toFixed(2));
+								price.val("$" + result.productAveragePrice.toFixed(2));
+								productId.val(result._id);
+
+							}
+							else {
+								alert("Duplicate product name added.");
+							}
+
+						});
+				}
+			});
+
+
+			$(".readonly").keydown(function (e) {
+			e.preventDefault();
+			});
+
+			$("#spinner" + i).spinner({
+				min: 1,
+				numberFormat: "n"
+			});
+			$("#spinner" + i).spinner("disable");
+			i++;
+		}
+
+		function myFunction(number) {
+			let container = document.getElementById("Product" + number);
+			delete productsName[number];
+			container.remove()
+			//i--;
+		}
+
+		// To make field readonly
+		$(".readonly").keydown(function (e) {
+			e.preventDefault();
+		});
+	</script>
+</div>

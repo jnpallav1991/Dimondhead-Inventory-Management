@@ -33,8 +33,9 @@ const Employee = require("../models/employee"),
 	};
 
 module.exports = {
+	//get all employees detail
 	index: (req, res, next) => {
-		Employee.find()
+		Employee.find().sort({hireDate: -1})
 			.then(employees => {
 				res.locals.employees = employees;
 				next();
@@ -44,20 +45,22 @@ module.exports = {
 				next(error);
 			});
 	},
+	//employee view
 	indexView: (req, res) => {
 		res.render("employees/index", {
 			formatedPostedDate: dateFormat
 		});
 	},
 
+	//create view for new employee
 	new: (req, res) => {
-		res.render("employees/new");
+		res.render("employees/create");
 	},
 
+	//create new employee
 	create: (req, res, next) => {
 		console.log(req.skip)
-		if (req.skip)next();
-		console.log("Print new employee 1")
+		if (req.skip) next();
 		let newEmployee = new Employee(getEmployeeParams(req.body));
 		Employee.register(newEmployee, req.body.password, (e, employee) => {
 			if (employee) {
@@ -70,32 +73,17 @@ module.exports = {
 				next();
 			}
 		});
-		console.log("Print new employee 2")
+
 	},
 
+	//redirect view
 	redirectView: (req, res, next) => {
 		let redirectPath = res.locals.redirect;
 		if (redirectPath !== undefined) res.redirect(redirectPath);
 		else next();
 	},
 
-	show: (req, res, next) => {
-		let employeeId = req.params.id;
-		Employee.findById(employeeId)
-			.then(employee => {
-				res.locals.employee = employee;
-				next();
-			})
-			.catch(error => {
-				console.log(`Error fetching employee by ID: ${error.message}`);
-				next(error);
-			});
-	},
-
-	showView: (req, res) => {
-		res.render("employees/show");
-	},
-
+	//view to edit employee details
 	edit: (req, res, next) => {
 		let employeeId = req.params.id;
 		Employee.findById(employeeId)
@@ -111,6 +99,7 @@ module.exports = {
 			});
 	},
 
+	//update employee details to db
 	update: (req, res, next) => {
 		let employeeId = req.params.id,
 			employeeParams = getEditEmployeeParams(req.body);
@@ -130,6 +119,7 @@ module.exports = {
 			});
 	},
 
+	//delete employee
 	delete: (req, res, next) => {
 		let employeeId = req.params.id;
 		Employee.findByIdAndRemove(employeeId)
@@ -143,12 +133,20 @@ module.exports = {
 			});
 	},
 
+	//show login view
 	login: (req, res) => {
-		res.render("employees/login");
+		if (req.session.auth) // if user is still authenticated
+		{
+			res.redirect('/');
+		}
+		else {
+			res.render("employees/login");
+		}
 	},
 
+	//validate employee details
 	validate: async (req, res, next) => {
-		console.log("Print new employee 3")
+
 		await check("fname", "Enter first name").notEmpty().run(req);
 		await check("lname", "Enter last name").notEmpty().run(req);
 		await check("dob", "Enter dob").notEmpty().run(req);
@@ -159,23 +157,24 @@ module.exports = {
 		await check("userType", "Enter user type").notEmpty().run(req);
 		await check("hireDate", "Enter hire date").notEmpty().run(req);
 
-		console.log("Print new employee 4")
+
 		const error = validationResult(req);
 		if (!error.isEmpty()) {
 			let messages = error.array().map(e => e.msg);
 			req.skip = true;
 			req.flash("error", messages.join(" and "));
 			res.locals.redirect = "/employees/new";
-			console.log("Print new employee 5")
+
 			next();
-			
+
 		} else {
-			console.log("Print new employee 6")
+
 			next();
 		}
 
 	},
 
+	//authenticate employee login
 	authenticate: passport.authenticate("local", {
 		failureRedirect: "/employees/login",
 		failureFlash: "Failed to login.",
@@ -183,6 +182,7 @@ module.exports = {
 		successFlash: "Logged in!"
 	}),
 
+	//logout employee
 	logout: (req, res, next) => {
 		req.logout();
 		req.flash("success", "You have been logged out!");
@@ -190,6 +190,7 @@ module.exports = {
 		next();
 	},
 
+	//verify authentication if user is logged in or not
 	verifyAuthentication: (req, res, next) => {
 		if (req.isAuthenticated()) {
 			next();
@@ -198,5 +199,23 @@ module.exports = {
 			req.flash("error", 'You must be signed in to view ${req.url}');
 			res.redirect("/employees/login");
 		}
-	}
+	},
+	
+	//verify whether user is admin
+	verifyAdmin: (req, res, next) => {
+		if (req.user && req.user.isAdmin) {
+			next();
+		} else {
+			res.send("Not authorized");
+		}
+	},
+
+	//verify whether user is loggedIn
+	verifyLoginUser: (req, res, next) => {
+		if (req.user) {
+			next();
+		} else {
+			res.send("Not authorized");
+		}
+	},
 };

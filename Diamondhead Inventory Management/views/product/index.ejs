@@ -1,16 +1,21 @@
-<h2 class="content">Product List</h2>
-<div class="content">
-  <a class="btn" href="/product/new">Add Product</a>
+<h2>Product List</h2>
+<div>
+	<%if (currentUser.isAdmin){%>
+  <a class="btn btn-primary" href="/product/create">Add Product</a>
+  <%}%>
   <h1></h1>
 </div>
-<table class="scrollable">
-  <thead>
+<table class="table table-bordered">
+  <thead class="thead-dark">
     <tr>
       <th>Product Name</th>
       <th>Brand Name</th>
-      <th>Description</th>
+	  <th>Description</th>
+	  <th>In Stock</th>
+	  <% if(currentUser && currentUser.isAdmin){ %>
       <th>Edit</th>
-      <th>Delete</th>
+	  <th>Delete</th>
+	  <% }; %>
     </tr>
   </thead>
   <tbody>
@@ -24,13 +29,18 @@
       </td>
       <td>
         <%= product.pDescription %>
-      </td>
+	  </td>
+	  <td>
+        <%= product.productAvailable %>
+	  </td>
+	  <% if(currentUser && currentUser.isAdmin){ %>
       <td>
         <a href="<%=`product/${product._id}/edit`%>"><i class="far fa-edit"></i></a>
       </td>
       <td>
        <a href="<%= `product/${product._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this product?')" ><i class="far fa-trash-alt"></i></a>
-      </td>
+	  </td>
+	  <% }; %>
     </tr>
     <% }); %>
   </tbody>

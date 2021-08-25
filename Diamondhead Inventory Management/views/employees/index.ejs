@@ -1,49 +1,53 @@
-<h2 class="content">Employees</h2>
-<div class="content">
-  <a class="btn" href="/employees/new">Create Employees</a>
-  <h1></h1>
+<h2>Employees</h2>
+<div>
+	<% if(currentUser && currentUser.isAdmin || employees.length==0){ %>
+		<a class="btn btn-outline-primary" href="/employees/create">Create Employees</a>
+		<%}%>
+	<p style="margin-top: 25px;"></p>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date of birth</th>
-      <th>Phone Number</th>
-      <th>Email</th>
-      <th>User Type</th>
-	  <th>Hire Date</th>
-	  <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% employees.forEach(employee => { %>
-    <tr>
-      <td>
-          <%=  employee.fullName %>
-      </td>
-      <td>
-		<%= formatedPostedDate(employee.dob,"mmm d, yyyy") %>
-      </td>
-      <td>
-        <%= employee.phoneNumber %>
-	  </td>
-	  <td>
-        <%= employee.email %>
-	  </td>
-	  <td>
-        <%= employee.userType %>
-	  </td>
-	  <td>
-        <%= formatedPostedDate(employee.hireDate,"mmm d, yyyy") %>
-	  </td>
-	  <td>
-        <a href="<%=`employees/${employee._id}/edit`%>"><i class="far fa-edit"></i></a>
-      </td>
-      <td>
-       <a href="<%= `employees/${employee._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this employee?')" ><i class="far fa-trash-alt"></i></a>
-      </td>
-    </tr>
-    <% }); %>
-  </tbody>
+<table class="table table-bordered">
+	<thead class="thead-dark">
+		<tr>
+			<th>Name</th>
+			<th>Date of birth</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+			<th>User Type</th>
+			<th>Hire Date</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% employees.forEach(employee=> { %>
+			<tr>
+				<td>
+					<%= employee.fullName %>
+				</td>
+				<td>
+					<%= formatedPostedDate(employee.dob,"mmm d, yyyy") %>
+				</td>
+				<td>
+					<%= employee.phoneNumber %>
+				</td>
+				<td>
+					<%= employee.email %>
+				</td>
+				<td>
+					<%= employee.userType %>
+				</td>
+				<td>
+					<%= formatedPostedDate(employee.hireDate,"mmm d, yyyy") %>
+				</td>
+				<td>
+					<a href="<%=`employees/${employee._id}/edit`%>"><i class="far fa-edit"></i></a>
+				</td>
+				<td>
+					<a href="<%= `employees/${employee._id}/delete?_method=DELETE` %>"
+						onclick="return confirm('Are you sure you want to delete this employee?')"><i
+							class="far fa-trash-alt"></i></a>
+				</td>
+			</tr>
+			<% }); %>
+	</tbody>
 </table>

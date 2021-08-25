@@ -1,0 +1,33 @@
+<h1 class="center">
+	<%= city.city %>
+  </h1>
+  
+  <table class="table">
+	<tr>
+	  <th>Temperature</th>
+	  <td>
+		<%= city.current.weather.tp %><span>&#8451;</span>
+	  </td>
+	</tr>
+	<tr>
+		<th>Pressure</th>
+		<td>
+		  <%= city.current.weather.pr %>
+		  <%='mb'%>
+		</td>
+	  </tr>
+	<tr>
+	  <th>Humidity</th>
+	  <td>
+		<%= city.current.weather.hu %>
+		<%='%'%>
+	  </td>
+	</tr>
+	<tr>
+		<th>Air Quality</th>
+		<td>
+		  <%= city.current.pollution.aqius %>
+		</td>
+	  </tr>
+  </table>
+  

@@ -1,10 +1,10 @@
-<h2 class="content">Product Purchase</h2>
-<div class="content">
-  <a class="btn" href="/purchase/new">Purchase</a>
+<h2>Product Purchase</h2>
+<div>
+  <a class="btn btn-primary" href="/purchase/create">Purchase</a>
   <h1></h1>
 </div>
-<table class="scrollable">
-  <thead>
+<table class="table table-bordered">
+  <thead class="thread-dark">
     <tr>
 	  <th>Product Name</th>
       <th>Quantity</th>
@@ -23,7 +23,7 @@
         <%= purchase.totalQuantity %>
       </td>
       <td>
-        <%= `$${purchase.productPrice}` %>
+        <%= `$${purchase.productPrice.toFixed(2)}` %>
       </td>
     </tr>
     <% }); %>
